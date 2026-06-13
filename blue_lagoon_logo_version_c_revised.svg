@@ -1,0 +1,58 @@
+<svg width="100%" viewBox="0 0 690 330" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Blue Lagoon Consulting Services — Version C dark navy revised</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Horizontal logo on dark navy background with a four-lobed rounded cloud mark containing a water droplet and wave ripples</desc>
+
+  <defs>
+    <linearGradient id="gMarkDk" x1="0%" y1="0%" x2="100%" y2="110%">
+      <stop offset="0%" stop-color="#1589EE"/>
+      <stop offset="100%" stop-color="#00A1E0"/>
+    </linearGradient>
+    <linearGradient id="gDropDk" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#0070D2"/>
+      <stop offset="100%" stop-color="#032D60"/>
+    </linearGradient>
+    <clipPath id="cloudClip">
+      <path d="&#10;        M128 98&#10;        C128 78 113 64 94 64&#10;        C83 64 73 69 67 77&#10;        C62 70 54 65 44 65&#10;        C27 65 13 79 13 96&#10;        C13 97 13 98 13 99&#10;        C6 103 1 110 1 119&#10;        C1 131 11 141 23 141&#10;        L153 141&#10;        C165 141 175 131 175 119&#10;        C175 110 170 103 163 99&#10;        C163 98 163 98 163 97&#10;        C163 79 149 64 132 64&#10;        C130 64 129 64 128 65&#10;        Z&#10;      "/>
+    </clipPath>
+  </defs>
+
+  <!-- Navy background panel -->
+  <rect x="0" y="0" width="680" height="320" rx="16" fill="#032D60" style="fill:rgb(3, 45, 96);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- subtle deep wave layers in bg -->
+  <path d="M0 230 Q170 212 340 228 Q510 244 680 226 L680 320 L0 320 Z" fill="#021E42" opacity="0.7" style="fill:rgb(2, 30, 66);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M0 265 Q170 248 340 263 Q510 278 680 262 L680 320 L0 320 Z" fill="#021E42" opacity="0.5" style="fill:rgb(2, 30, 66);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── CLOUD MARK ── centered at (88, 103), all-round cloud shape ── -->
+  <!-- Four overlapping circles forming a natural cloud silhouette -->
+  <!-- left-back lobe -->
+  <circle cx="52" cy="105" r="28" fill="url(#gMarkDk)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- left-front lobe -->
+  <circle cx="78" cy="93" r="34" fill="url(#gMarkDk)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- right-front lobe -->
+  <circle cx="114" cy="90" r="36" fill="url(#gMarkDk)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- right-back lobe -->
+  <circle cx="144" cy="103" r="28" fill="url(#gMarkDk)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- fill the gaps between lobes so cloud reads as solid -->
+  <ellipse cx="96" cy="104" rx="68" ry="28" fill="url(#gMarkDk)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- wave ripples clipped strictly inside the cloud shape -->
+  <ellipse cx="96" cy="122" rx="58" ry="13" fill="#021E42" opacity="0.55" clip-path="url(#cloudClip)" style="fill:rgb(2, 30, 66);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="96" cy="114" rx="60" ry="11" fill="#00A1E0" opacity="0.35" clip-path="url(#cloudClip)" style="fill:rgb(0, 161, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.35;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="96" cy="107" rx="60" ry="9" fill="#1589EE" opacity="0.25" clip-path="url(#cloudClip)" style="fill:rgb(21, 137, 238);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- droplet centered in cloud -->
+  <path d="M96 82 C96 82 80 104 80 114 C80 123.3 87.2 131 96 131 C104.8 131 112 123.3 112 114 C112 104 96 82 96 82 Z" fill="white" opacity="0.93" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.93;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M96 91 C96 91 84 109 84 114 C84 120.5 89.5 126 96 126 C102.5 126 108 120.5 108 114 C108 109 96 91 96 91 Z" fill="url(#gDropDk)" opacity="0.55" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="90" cy="110" rx="3.5" ry="5.5" fill="white" opacity="0.55" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── TEXT BLOCK ── -->
+  <text x="202" y="100" font-family="'Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="700" fill="white" letter-spacing="-0.5" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:34px;font-weight:700;text-anchor:start;dominant-baseline:auto">Blue Lagoon</text>
+  <rect x="202" y="110" width="380" height="2.5" rx="1.25" fill="#00A1E0" style="fill:rgb(0, 161, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="202" y="133" font-family="'Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="400" fill="#00A1E0" letter-spacing="4.5" style="fill:rgb(0, 161, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:19px;font-weight:400;text-anchor:start;dominant-baseline:auto">CONSULTING SERVICES</text>
+  <text x="202" y="156" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="400" fill="#5EB8FF" letter-spacing="1.8" style="fill:rgb(94, 184, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">SALESFORCE CUSTOM DEVELOPMENT</text>
+  <!-- dots -->
+  <circle cx="202" cy="176" r="3" fill="#00A1E0" style="fill:rgb(0, 161, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="214" cy="176" r="3" fill="#1589EE" opacity="0.7" style="fill:rgb(21, 137, 238);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="226" cy="176" r="3" fill="#5EB8FF" opacity="0.45" style="fill:rgb(94, 184, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.45;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</svg>

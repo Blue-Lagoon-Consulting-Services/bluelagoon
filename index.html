@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Lagoon Consulting Services — Salesforce Custom Development</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:      '#032D60',
+            'navy-deep': '#021E42',
+            'bl-blue':  '#1589EE',
+            'bl-cyan':  '#00A1E0',
+            'bl-light': '#5EB8FF',
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+    .nav-bg   { background: #032D60; }
+    .hero-bg  { background: linear-gradient(160deg, #021E42 0%, #032D60 50%, #0a3a7a 100%); }
+    .wave-divider { line-height: 0; }
+
+    .bl-gradient-text {
+      background: linear-gradient(90deg, #1589EE, #00A1E0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bl-gradient-bg {
+      background: linear-gradient(135deg, #1589EE 0%, #00A1E0 100%);
+    }
+    .skill-tag {
+      background: rgba(21,137,238,0.10);
+      border: 1px solid rgba(21,137,238,0.25);
+      color: #5EB8FF;
+    }
+    .card-hover {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(21,137,238,0.15);
+    }
+    .section-rule {
+      height: 3px;
+      width: 48px;
+      background: linear-gradient(90deg, #1589EE, #00A1E0);
+      border-radius: 9999px;
+    }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="nav-bg fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-24">
+      <!-- Logo: crop SVG's content region (cloud + text lives in top 55% of viewBox) -->
+      <a href="#" class="flex items-center flex-shrink-0" style="width:300px; height:80px; overflow:hidden; border-radius:12px;">
+        <img src="blue_lagoon_logo_version_c_revised.svg" alt="Blue Lagoon Consulting Services"
+             style="width:300px; height:143px; margin-top:25px;" />
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about"      class="text-sm font-medium text-white/70 hover:text-white transition-colors">About</a>
+        <a href="#clients"    class="text-sm font-medium text-white/70 hover:text-white transition-colors">Clients</a>
+        <a href="#services"   class="text-sm font-medium text-white/70 hover:text-white transition-colors">Services</a>
+        <a href="#skills"     class="text-sm font-medium text-white/70 hover:text-white transition-colors">Skills</a>
+        <a href="#contact"    class="text-sm font-medium text-white/70 hover:text-white transition-colors">Contact</a>
+      </div>
+      <a href="mailto:mbrybag@gmail.com" class="bl-gradient-bg text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-lg shadow-blue-900/40 hover:opacity-90 transition-opacity">
+        Get in Touch
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-bg pt-44 pb-28 relative overflow-hidden">
+    <!-- Decorative glow blobs -->
+    <div class="absolute top-10 left-1/4 w-96 h-96 rounded-full bg-bl-blue/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-bl-cyan/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="max-w-3xl">
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 mb-7">
+          <span class="w-2 h-2 rounded-full bg-bl-cyan"></span>
+          <span class="text-bl-light text-xs font-semibold tracking-wide uppercase">Salesforce Custom Development</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          Salesforce expertise<br />
+          <span class="bl-gradient-text">built to scale</span> with you.
+        </h1>
+        <p class="text-white/60 text-lg leading-relaxed max-w-2xl mb-10">
+          Blue Lagoon Consulting Services delivers precision Salesforce engineering — from Apex development and LWC to org architecture and data integrations. Straightforward, expert-led, results-focused.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#services" class="bl-gradient-bg text-white font-semibold px-8 py-3.5 rounded-lg text-sm shadow-lg shadow-blue-900/40 hover:opacity-90 transition-opacity">
+            See What We Do
+          </a>
+          <a href="#contact" class="border border-white/25 text-white font-semibold px-8 py-3.5 rounded-lg text-sm hover:border-white/50 hover:bg-white/5 transition-all">
+            Work With Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="mt-20 flex flex-col sm:flex-row gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+        <div class="flex-1 bg-white/5 px-8 py-7 text-center">
+          <p class="text-3xl font-extrabold text-white">10<span class="text-bl-cyan">+</span></p>
+          <p class="text-white/50 text-sm mt-1 font-medium">Years Salesforce</p>
+        </div>
+        <div class="flex-1 bg-white/5 px-8 py-7 text-center">
+          <p class="text-3xl font-extrabold text-white">95<span class="text-bl-cyan">%+</span></p>
+          <p class="text-white/50 text-sm mt-1 font-medium">Test Code Coverage</p>
+        </div>
+        <div class="flex-1 bg-white/5 px-8 py-7 text-center">
+          <p class="text-3xl font-extrabold text-white">2</p>
+          <p class="text-white/50 text-sm mt-1 font-medium">Enterprise Clients</p>
+        </div>
+        <div class="flex-1 bg-white/5 px-8 py-7 text-center">
+          <p class="text-3xl font-extrabold text-white">Full<span class="text-bl-cyan">-Stack</span></p>
+          <p class="text-white/50 text-sm mt-1 font-medium">Front + Back + Data</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave bottom edge -->
+    <div class="wave-divider absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 60 L0 30 Q360 0 720 28 Q1080 56 1440 20 L1440 60 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Text -->
+        <div>
+          <div class="section-rule mb-5"></div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-5">
+            A boutique Salesforce practice built on deep technical experience.
+          </h2>
+          <p class="text-gray-600 text-base leading-relaxed mb-5">
+            Blue Lagoon Consulting Services is a sole-proprietor LLC founded by Michael Brybag — a senior software engineer with over a decade of hands-on Salesforce development at enterprise nonprofit and healthcare technology organizations.
+          </p>
+          <p class="text-gray-600 text-base leading-relaxed mb-5">
+            We specialize in the full Salesforce stack: Apex triggers and batch jobs, Lightning Web Components, flow automation, org administration, and data integrations with external systems. We don't just configure — we engineer.
+          </p>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Based in Taipei, Taiwan with U.S. roots, we serve clients in both markets and work across time zones.
+          </p>
+          <div class="mt-8 flex items-center gap-4">
+            <img src="https://placehold.co/56x56/032D60/ffffff?text=MB" alt="Michael Brybag" class="w-14 h-14 rounded-full border-2 border-bl-cyan/30" />
+            <div>
+              <p class="font-bold text-gray-900">Michael Brybag</p>
+              <p class="text-gray-500 text-sm">Founder &amp; Principal Consultant</p>
+              <p class="text-bl-blue text-xs font-medium mt-0.5">Salesforce Certified Platform Developer I</p>
+            </div>
+          </div>
+        </div>
+        <!-- Credential card -->
+        <div class="bg-navy rounded-2xl p-8 shadow-xl">
+          <p class="text-bl-light text-xs font-bold uppercase tracking-widest mb-6">Certifications &amp; Education</p>
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bl-gradient-bg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Salesforce Certified Platform Developer I</p>
+                <p class="text-white/40 text-xs mt-0.5">Salesforce · San Francisco, CA</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-bl-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Claude Code in Action — Claude Code 101</p>
+                <p class="text-white/40 text-xs mt-0.5">Anthropic · Issued May 2026</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-bl-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Certificate, .NET Development (C#)</p>
+                <p class="text-white/40 text-xs mt-0.5">SetFocus LLC · Parsippany, NJ</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-bl-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">BS, Computer Information Systems</p>
+                <p class="text-white/40 text-xs mt-0.5">John Jay College of Criminal Justice (CUNY) · New York, NY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLIENTS ===== -->
+  <section id="clients" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <div class="section-rule mx-auto mb-5"></div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Past Clients</h2>
+        <p class="mt-4 text-gray-500 max-w-xl mx-auto">Organizations that have trusted Blue Lagoon for mission-critical Salesforce work.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- KIPP Foundation -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm card-hover">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h3 class="text-xl font-extrabold text-gray-900">KIPP Foundation</h3>
+              <p class="text-bl-blue text-sm font-medium mt-0.5">Jan 2014 – Oct 2025</p>
+            </div>
+            <div class="w-14 h-14 rounded-xl bg-navy flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-bl-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">
+            Eleven years supporting one of the largest U.S. charter school networks — first as a full-time Application Developer/Senior Software Engineer, then as an independent contractor through Blue Lagoon Consulting Services.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Architected a new Salesforce org and migrated a legacy donation management app using NPSP
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Developed Apex classes, triggers, batch jobs, validation, flows, and test methods to best practices
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Built SQL ETL pipelines feeding Tableau dashboards and SQL Server data warehouses
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Consumed 3rd-party APIs via Apex; administered org metadata including sharing rules and permissions
+            </li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">Apex</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">LWC</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">NPSP</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">SQL Server</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">Tableau</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">WordPress</span>
+          </div>
+        </div>
+
+        <!-- Chronosphere -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm card-hover">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h3 class="text-xl font-extrabold text-gray-900">Chronosphere</h3>
+              <p class="text-bl-blue text-sm font-medium mt-0.5">Oct 2023 – Jul 2024</p>
+            </div>
+            <div class="w-14 h-14 rounded-xl bg-navy flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-bl-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 10H3m18-10h-2m2 10h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">
+            Contracted Salesforce engineer for Chronosphere, a cloud-native observability platform. Focused on Salesforce engineering, data de-duplication, and BigQuery-driven analytics for the GTM team.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Wrote Apex trigger code with an event handler framework; maintained 95%+ test coverage
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Configured data de-duplication in Salesforce using Plauti Duplicate Checker
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Extracted Salesforce data via Google BigQuery; ran complex manipulation queries for Tableau
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-bl-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Automated ad-hoc department requests using Apex, flows, and SQL
+            </li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">Apex</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">BigQuery</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">Plauti</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">Tableau</span>
+            <span class="skill-tag text-xs px-3 py-1 rounded-full">Flows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="py-24 bg-navy relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-bl-blue/8 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-bl-cyan/8 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-14">
+        <div class="section-rule mx-auto mb-5"></div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white">What We Do</h2>
+        <p class="mt-4 text-white/50 max-w-xl mx-auto">End-to-end Salesforce engineering services for nonprofits, startups, and growth-stage companies.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+          <div class="w-12 h-12 rounded-xl bl-gradient-bg flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Apex Development</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Custom triggers, batch jobs, scheduled jobs, invocable methods, and REST/SOAP callouts — engineered to Salesforce best practices with full test coverage.</p>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+          <div class="w-12 h-12 rounded-xl bl-gradient-bg flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Lightning Web Components</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Modern LWC development for custom UI on any Salesforce platform — Experience Cloud, Service Console, or standard app pages.</p>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+          <div class="w-12 h-12 rounded-xl bl-gradient-bg flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Org Architecture &amp; Migration</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Greenfield org design, legacy system migrations (including NPSP), metadata deployment, and sandbox management using SF CLI and Copystorm.</p>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+          <div class="w-12 h-12 rounded-xl bl-gradient-bg flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Flow &amp; Automation</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Record-triggered flows, screen flows, scheduled flows, and process automation that replace manual work and reduce support overhead.</p>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+          <div class="w-12 h-12 rounded-xl bl-gradient-bg flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Data &amp; Integrations</h3>
+          <p class="text-white/50 text-sm leading-relaxed">SQL ETL pipelines, Google BigQuery transformations, 3rd-party API integrations via Apex, and Tableau-ready data exports for business intelligence.</p>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+          <div class="w-12 h-12 rounded-xl bl-gradient-bg flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Org Administration</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Profiles, permission sets, sharing rules, report types, validation rules, and workflow configuration — keeping your org clean, secure, and scalable.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <div class="section-rule mx-auto mb-5"></div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Technical Skills</h2>
+        <p class="mt-4 text-gray-500 max-w-lg mx-auto">A breadth of tools and platforms built over 15+ years of professional software development.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Salesforce Platform -->
+        <div class="border border-gray-100 rounded-2xl p-7 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bl-gradient-bg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-900">Salesforce Platform</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Apex</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">LWC</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">VisualForce</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">SF CLI</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">NPSP</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Flows</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Batch Apex</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">REST APIs</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Copystorm</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Plauti</span>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="border border-gray-100 rounded-2xl p-7 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bl-gradient-bg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-900">Programming Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Apex</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">C#.NET</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">JavaScript</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">jQuery</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">T-SQL</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">SQL</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">HTML5</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">CSS/SASS</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">C</span>
+          </div>
+        </div>
+
+        <!-- Data & Analytics -->
+        <div class="border border-gray-100 rounded-2xl p-7 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bl-gradient-bg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-900">Data &amp; Analytics</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">MS SQL Server</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Google BigQuery</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Tableau</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">SSRS</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">ETL Pipelines</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Stored Procedures</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Google Sheets</span>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="border border-gray-100 rounded-2xl p-7 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bl-gradient-bg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-900">Tools &amp; Platforms</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">GitHub / Bitbucket</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">JIRA</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">VSCode</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">Visual Studio</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">ASP.NET / MVC</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">WordPress</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">SharePoint</span>
+            <span class="skill-tag text-xs px-3 py-1.5 rounded-full font-medium">BizTalk</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MORE INFORMATION / CONTACT ===== -->
+  <section id="contact" class="py-24 navy-deep" style="background:#021E42;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <div class="section-rule mx-auto mb-5"></div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white">More Information</h2>
+        <p class="mt-4 text-white/50 max-w-lg mx-auto">Connect, explore the work, or reach out directly — we're happy to talk through your Salesforce project.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/mbrybag/" target="_blank" rel="noopener noreferrer"
+           class="group bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/10 hover:border-bl-blue/50 transition-all">
+          <div class="w-14 h-14 rounded-2xl bl-gradient-bg flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <p class="text-white font-bold mb-1">LinkedIn</p>
+          <p class="text-white/40 text-sm">Professional profile &amp; work history</p>
+          <p class="text-bl-cyan text-xs mt-3 font-medium group-hover:text-bl-light transition-colors">linkedin.com/in/mbrybag</p>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/mikeoak79" target="_blank" rel="noopener noreferrer"
+           class="group bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/10 hover:border-bl-blue/50 transition-all">
+          <div class="w-14 h-14 rounded-2xl bl-gradient-bg flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </div>
+          <p class="text-white font-bold mb-1">GitHub</p>
+          <p class="text-white/40 text-sm">Projects and code samples</p>
+          <p class="text-bl-cyan text-xs mt-3 font-medium group-hover:text-bl-light transition-colors">github.com/mikeoak79</p>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:mbrybag@gmail.com"
+           class="group bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/10 hover:border-bl-blue/50 transition-all">
+          <div class="w-14 h-14 rounded-2xl bl-gradient-bg flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <p class="text-white font-bold mb-1">Email</p>
+          <p class="text-white/40 text-sm">Reach out about a project</p>
+          <p class="text-bl-cyan text-xs mt-3 font-medium group-hover:text-bl-light transition-colors">mbrybag@gmail.com</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-navy border-t border-white/10 py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <img src="blue_lagoon_logo_version_c_revised.svg" alt="Blue Lagoon Consulting Services" class="h-10 rounded-lg" />
+      <p class="text-white/30 text-sm text-center">
+        © 2025 Blue Lagoon Consulting Services (Michael Brybag dba) · Washington State LLC
+      </p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.linkedin.com/in/mbrybag/" target="_blank" rel="noopener noreferrer"
+           class="text-white/30 hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/Blue-Lagoon-Consulting-Services" target="_blank" rel="noopener noreferrer"
+           class="text-white/30 hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
